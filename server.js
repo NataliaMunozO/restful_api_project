@@ -20,6 +20,10 @@ app.use('/api/v1/users', require('./api/v1/routes/users.routes')); //Ruta para u
 app.use('/api/v1/articles', require('./api/v1/routes/articles.routes')); // Ruta para articles con la versión 1 de la API
 app.use('/api/v1/categories', require('./api/v1/routes/categories.routes')); // Ruta para categories con la versión 1 de la API
 
+app.get('/api/v1/test',(req,res)=>{
+    res.send('Hello ADSO !!!');
+})
+
 // app.get('/',(req,res) =>{
 //     console.log("get ruta principal")
 //     res.send({Tittle:'Saludos ADSO!'})
