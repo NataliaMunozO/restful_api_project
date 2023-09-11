@@ -8,7 +8,7 @@ module.exports = {
       type: 'foreign key',
       name: 'user-article-association',
       references:{
-        table:'users',
+        table:'Users',
         field: 'id'
       }
     })

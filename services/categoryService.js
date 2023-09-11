@@ -1,4 +1,5 @@
 const db = require('../models')
+const CategoryService =('../services/CategoryService')
 
 const getAllCategories = async() =>{
     try{

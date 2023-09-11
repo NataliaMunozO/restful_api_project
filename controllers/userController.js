@@ -26,14 +26,14 @@ const getUser = async(req,res) =>{
 const createUser = async(req,res) =>{
     try {
         const{body} = req
-        if(body.name== null||body.email==null||body.phone||body.password==null){
+        if(body.name=== null||body.email===null||body.phone===null||body.password===null){
             res.status(400).send({status:'FAILED', data:null})
         }
         else{
-             //console.log(body.name)
+            //  console.log(body.name)
             const newUser = await userService.createUser(body.name,body.email,body.phone,body.password)
-            res.status(201).send({status:'OK',data:newUser})
-        }
+            res.status(200).send({status:'OK',data:newUser})
+         }
         
     } catch (error) {
         res.status(error.status || 500).send({status: 'FAILED', data:{error: error.message} });
