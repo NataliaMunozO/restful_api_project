@@ -26,7 +26,7 @@ const getUser = async(req,res) =>{
 const createUser = async(req,res) =>{
     try {
         const{body} = req
-        if(body.name== null||body.email==null||body.phone||body.password==null){
+        if(body.name== null||body.email==null||body.phone==null||body.password==null){
             res.status(400).send({status:'FAILED', data:null})
         }
         else{
