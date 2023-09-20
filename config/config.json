@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": "postgres",
+    "password": "root",
     "database": "db_api_rest",
     "host": "127.0.0.1",
     "dialect": "postgres"
@@ -14,10 +14,17 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "natadb",
+    "password": "uslqzzam8U5a1DR5aUFSfmLwiDYxswM8",
+    "database": "db_api_rest_9rs4",
+    "host": "oregon-postgres.render.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl":{
+        "require":"true",
+        "rejectUnauthorized": false
+      }
+    }
   }
+  
 }

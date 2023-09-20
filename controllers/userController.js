@@ -18,7 +18,7 @@ const getUser = async(req,res) =>{
         res.status(200).send({status: 'OK', data: user});
     } catch (error) {
         res.status(error.status || 500).send({status: 'FAILED', data:{error: error.message} });
-        //res.status(400).send({status:'FAILED', data:null})
+
     }
     
 }
@@ -26,11 +26,11 @@ const getUser = async(req,res) =>{
 const createUser = async(req,res) =>{
     try {
         const{body} = req
-        if(body.name=== null||body.email===null||body.phone===null||body.password===null){
+        if(body.name==null||body.email==null||body.phone==null||body.password==null){
             res.status(400).send({status:'FAILED', data:null})
         }
         else{
-            //  console.log(body.name)
+           
             const newUser = await userService.createUser(body.name,body.email,body.phone,body.password)
             res.status(200).send({status:'OK',data:newUser})
          }
@@ -48,7 +48,7 @@ const updateUser = async(req,res)=>{
         const id = req.params.userId
         let{name,email,phone,password} = req.body;
         const updateUser = await userService.updateUser(id,name,email,phone,password)
-        res.status(201).send({status:'OK',data:updateUser})
+        res.status(200).send({status:'OK',data:updateUser})
     } catch (error) {
         res.status(error.status || 500).send({status: 'FAILED', data:{error: error.message} });
     }
@@ -60,7 +60,7 @@ const deleteUser = async (req,res)=>{
     try {
         const id = req.params.userId
         const deleteUser= await userService.deleteUser(id)
-        res.status(201).send({status:'OK',data:deleteUser})
+        res.status(200).send({status:'OK',data:deleteUser})
     } catch (error) {
         res.status(error.status || 500).send({status: 'FAILED', data:{error: error.message} });
     }
