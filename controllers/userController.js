@@ -26,11 +26,7 @@ const getUser = async(req,res) =>{
 const createUser = async(req,res) =>{
     try {
         const{body} = req
-<<<<<<< HEAD
-        if(body.name==null||body.email==null||body.phone==null||body.password==null){
-=======
         if(body.name== null||body.email==null||body.phone==null||body.password==null){
->>>>>>> 4cdaf8b204d6168a643e306d4dab6fc57570cd08
             res.status(400).send({status:'FAILED', data:null})
         }
         else{
