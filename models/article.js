@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       models.User.hasMany(Article)
 
       Article.belongsToMany(models.Category,{
-        through: "articleCategories",
+        through: "ArticleCategories",
         as: "categories"
       })
     }
